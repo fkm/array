@@ -7,6 +7,5 @@ Thumbs.db
 /node_modules/
 
 # Project
-/dist/
 /coverage/
 /.nyc_output/
