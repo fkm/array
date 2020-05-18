@@ -41,6 +41,7 @@ function preProcessScripts() {
 			library: 'array',
 			libraryTarget: 'umd',
 			filename: 'bundle.js',
+			globalObject: 'this',
 		},
 		resolve: {
 			modules: [
