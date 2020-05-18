@@ -230,8 +230,11 @@ function concatArrays(accumulator, value) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return concatNestedArrays; });
 function concatNestedArrays(accumulator, value) {
-  var next = Array.isArray(value) ? value.reduce(concatNestedArrays, []) : value;
-  return accumulator.concat(next);
+  if (Array.isArray(value)) {
+    value = value.reduce(concatNestedArrays, []);
+  }
+
+  return accumulator.concat(value);
 }
 
 /***/ }),
