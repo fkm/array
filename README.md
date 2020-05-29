@@ -3,9 +3,7 @@ Generic handlers for array functions.
 
 ## Usage
 * `npm install --save-dev @fkm/array`
-* `import { isDefined } from '@fkm/array'` or  
-  `import { isDefined } from '@fkm/array/filters'` or  
-  `import isDefined from '@fkm/array/filters/isDefined'`
+* `import { isDefined } from '@fkm/array'`
 * `[1, 2, , 4].filter(isDefined)` returns [1, 2, 4]
 
 ## Handlers
