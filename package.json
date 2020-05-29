@@ -5,6 +5,9 @@
   "main": "dist/bundle.min.js",
   "author": "Florian Mäder <florian@maederbiel.ch>",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "start": "gulp",
     "test": "nyc --reporter=html -- mocha --require @babel/register"
@@ -14,6 +17,7 @@
     "@babel/preset-env": "^7.9.6",
     "@babel/register": "^7.9.0",
     "@fkm/eslint-config": "^1.2.0",
+    "@semantic-release/git": "^9.0.0",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
     "del": "^5.1.0",
