@@ -52,11 +52,18 @@ module.exports = {
 		new CleanWebpackPlugin(),
 	],
 	// https://webpack.js.org/plugins/terser-webpack-plugin/
+	// https://webpack.js.org/plugins/terser-webpack-plugin/#remove-comments
 	// https://stackoverflow.com/a/34018909
 	optimization: {
 		minimize: true,
 		minimizer: [new TerserPlugin({
 			include: /\.min\.js$/,
+			terserOptions: {
+				output: {
+					comments: false,
+				},
+			},
+			extractComments: false,
 		})],
 	},
 };
