@@ -5,6 +5,7 @@
   "main": "dist/bundle.min.js",
   "author": "Florian Mäder <florian@maederbiel.ch>",
   "license": "MIT",
+  "repository": "fkm/array",
   "publishConfig": {
     "access": "public"
   },
