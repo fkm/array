@@ -1,4 +1,4 @@
-const assert = require('assert');
+const { assert } = require('chai');
 
 const {
 	ascendingDates,
@@ -21,7 +21,7 @@ describe('Sorters', function () {
 			];
 
 			let result = items.sort(ascendingDates);
-			assert.deepStrictEqual(result, expected);
+			assert.deepEqual(result, expected);
 		});
 	});
 });

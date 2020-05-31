@@ -1,4 +1,4 @@
-const assert = require('assert');
+const { assert } = require('chai');
 
 const {
 	isDefined,
@@ -14,7 +14,7 @@ describe('Filters', function () {
 			let expected = [1, 2, 4];
 
 			let result = items.filter(isDefined);
-			assert.deepStrictEqual(result, expected);
+			assert.deepEqual(result, expected);
 		});
 	});
 
@@ -24,7 +24,7 @@ describe('Filters', function () {
 			let expected = ['a', 'b', 'd'];
 
 			let result = items.filter(isNotEmptyString);
-			assert.deepStrictEqual(result, expected);
+			assert.deepEqual(result, expected);
 		});
 	});
 
@@ -34,7 +34,7 @@ describe('Filters', function () {
 			let expected = [1, 2, 4];
 
 			let result = items.filter(keepUniqueValues);
-			assert.deepStrictEqual(result, expected);
+			assert.deepEqual(result, expected);
 		});
 	});
 
@@ -53,7 +53,7 @@ describe('Filters', function () {
 			];
 
 			let result = items.filter(keepUniqueDates);
-			assert.deepStrictEqual(result, expected);
+			assert.deepEqual(result, expected);
 		});
 	});
 });

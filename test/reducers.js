@@ -1,4 +1,4 @@
-const assert = require('assert');
+const { assert } = require('chai');
 
 const {
 	concatArrays,
@@ -13,7 +13,7 @@ describe('Reducers', function () {
 			let expected = [1, 2, [3], 4];
 
 			let result = items.reduce(concatArrays);
-			assert.deepStrictEqual(result, expected);
+			assert.deepEqual(result, expected);
 		});
 	});
 
@@ -23,7 +23,7 @@ describe('Reducers', function () {
 			let expected = [1, 2, 3, 4];
 
 			let result = items.reduce(concatNestedArrays);
-			assert.deepStrictEqual(result, expected);
+			assert.deepEqual(result, expected);
 		});
 	});
 
@@ -33,7 +33,7 @@ describe('Reducers', function () {
 			let expected = { a: 1, b: 2 };
 
 			let result = items.reduce(mergeObjects);
-			assert.deepStrictEqual(result, expected);
+			assert.deepEqual(result, expected);
 		});
 	});
 });
