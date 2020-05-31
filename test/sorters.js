@@ -2,7 +2,7 @@ const { assert } = require('chai');
 
 const {
 	ascendingDates,
-} = require('../lib');
+} = require('../dist/bundle.min');
 
 describe('Sorters', function () {
 	describe('ascendingDates', function () {

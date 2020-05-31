@@ -5,7 +5,7 @@ const {
 	isNotEmptyString,
 	keepUniqueValues,
 	keepUniqueDates,
-} = require('../lib');
+} = require('../dist/bundle.min');
 
 describe('Filters', function () {
 	describe('isDefined', function () {

@@ -4,7 +4,7 @@ const {
 	concatArrays,
 	concatNestedArrays,
 	mergeObjects,
-} = require('../lib');
+} = require('../dist/bundle.min');
 
 describe('Reducers', function () {
 	describe('concatArrays', function () {
