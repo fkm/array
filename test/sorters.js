@@ -20,8 +20,8 @@ describe('Sorters', function () {
 				new Date(2020, 0, 4),
 			];
 
-			let result = items.sort(ascendingDates);
-			assert.deepEqual(result, expected);
+			let actual = items.sort(ascendingDates);
+			assert.deepEqual(actual, expected);
 		});
 	});
 });

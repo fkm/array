@@ -13,8 +13,8 @@ describe('Filters', function () {
 			let items = [1, 2, undefined, 4];
 			let expected = [1, 2, 4];
 
-			let result = items.filter(isDefined);
-			assert.deepEqual(result, expected);
+			let actual = items.filter(isDefined);
+			assert.deepEqual(actual, expected);
 		});
 	});
 
@@ -23,8 +23,8 @@ describe('Filters', function () {
 			let items = ['a', 'b', '', 'd'];
 			let expected = ['a', 'b', 'd'];
 
-			let result = items.filter(isNotEmptyString);
-			assert.deepEqual(result, expected);
+			let actual = items.filter(isNotEmptyString);
+			assert.deepEqual(actual, expected);
 		});
 	});
 
@@ -33,8 +33,8 @@ describe('Filters', function () {
 			let items = [1, 2, 2, 4];
 			let expected = [1, 2, 4];
 
-			let result = items.filter(keepUniqueValues);
-			assert.deepEqual(result, expected);
+			let actual = items.filter(keepUniqueValues);
+			assert.deepEqual(actual, expected);
 		});
 	});
 
@@ -52,8 +52,8 @@ describe('Filters', function () {
 				new Date(2020, 0, 4),
 			];
 
-			let result = items.filter(keepUniqueDates);
-			assert.deepEqual(result, expected);
+			let actual = items.filter(keepUniqueDates);
+			assert.deepEqual(actual, expected);
 		});
 	});
 });
