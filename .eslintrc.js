@@ -20,5 +20,8 @@ module.exports = {
 
 	rules: {},
 
-	ignorePatterns: ['dist/**/*'],
+	ignorePatterns: [
+		'dist/**/*',
+		'docs/**/*',
+	],
 };

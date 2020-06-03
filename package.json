@@ -15,6 +15,7 @@
   "scripts": {
     "start": "webpack",
     "test": "nyc mocha --require @babel/register",
+    "docs": "esdoc",
     "lint": "eslint .",
     "release": "curl https://api.github.com/repos/fkm/array/dispatches -H \"Authorization: token ${GITHUB_TOKEN}\" -d '{ \"event_type\": \"semantic-release\" }'"
   },
@@ -27,6 +28,14 @@
     "babel-loader": "^8.1.0",
     "chai": "^4.2.0",
     "clean-webpack-plugin": "^3.0.0",
+    "esdoc": "^1.1.0",
+    "esdoc-accessor-plugin": "^1.0.0",
+    "esdoc-brand-plugin": "^1.0.1",
+    "esdoc-coverage-plugin": "^1.1.0",
+    "esdoc-ecmascript-proposal-plugin": "^1.0.0",
+    "esdoc-external-ecmascript-plugin": "^1.0.0",
+    "esdoc-importpath-plugin": "^1.0.2",
+    "esdoc-publish-html-plugin": "^1.1.2",
     "mocha": "^7.1.2",
     "nyc": "^15.0.1",
     "terser-webpack-plugin": "^3.0.2",
