@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../../">
-  <title data-ice="title">lib/filters/index.js | @fkm/array</title>
+  <title data-ice="title">lib/reducers/sumNumbers.js | @fkm/array</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -42,11 +42,19 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">lib/filters/index.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">export { default as isDefined } from &apos;./isDefined&apos;;
-export { default as isNotEmptyString } from &apos;./isNotEmptyString&apos;;
-export { default as keepUniqueValues } from &apos;./keepUniqueValues&apos;;
-export { default as keepUniqueDates } from &apos;./keepUniqueDates&apos;;
+<div class="content" data-ice="content"><h1 data-ice="title">lib/reducers/sumNumbers.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * Sum all values.
+ *
+ * @example
+ * [1, 2, 3].reduce(sumNumbers, 0) // 6
+ *
+ * @param {number} accumulator - The accumulated value previously returned in the last invocation.
+ * @param {number} value - The current element being processed in the array.
+ */
+export default function sumNumbers(accumulator, value) {
+	return accumulator + value;
+}
 </code></pre>
 
 </div>

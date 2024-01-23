@@ -797,7 +797,7 @@
     "__docId__": 58,
     "kind": "file",
     "name": "lib/reducers/concatArrays.js",
-    "content": "/**\n * Shallow flat operation.\n *\n * @example\n * [[1, 2], [[3], 4]].reduce(concatArrays) // [1, 2, [3], 4]\n *\n * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat\n * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flatMap\n *\n * @param {any[]} accumulator - The accumulated value previously returned in the last invocation.\n * @param {any} value - The current element being processed in the array.\n */\nexport default function concatArrays(accumulator, value) {\n\treturn accumulator.concat(value);\n}\n",
+    "content": "/**\n * Shallow flat operation.\n *\n * @example\n * [[1, 2], [[3], 4]].reduce(concatArrays, []) // [1, 2, [3], 4]\n *\n * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat\n * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flatMap\n *\n * @param {any[]} accumulator - The accumulated value previously returned in the last invocation.\n * @param {any} value - The current element being processed in the array.\n */\nexport default function concatArrays(accumulator, value) {\n\treturn accumulator.concat(value);\n}\n",
     "static": true,
     "longname": "/home/fkm/Development/GitHub/fkm/array/lib/reducers/concatArrays.js",
     "access": "public",
@@ -819,7 +819,7 @@
     "importStyle": "concatArrays",
     "description": "Shallow flat operation.",
     "examples": [
-      "[[1, 2], [[3], 4]].reduce(concatArrays) // [1, 2, [3], 4]"
+      "[[1, 2], [[3], 4]].reduce(concatArrays, []) // [1, 2, [3], 4]"
     ],
     "see": [
       "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat",
@@ -853,7 +853,7 @@
     "__docId__": 60,
     "kind": "file",
     "name": "lib/reducers/concatNestedArrays.js",
-    "content": "/**\n * Deep flat operation.\n *\n * The depth is unlimited and cannot be set.\n *\n * @example\n * [[1, 2], [[3], 4]].reduce(concatNestedArrays) // [1, 2, 3, 4]\n *\n * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat\n * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flatMap\n *\n * @param {any[]} accumulator - The accumulated value previously returned in the last invocation.\n * @param {any} value - The current element being processed in the array.\n */\nexport default function concatNestedArrays(accumulator, value) {\n\tif (Array.isArray(value)) {\n\t\tvalue = value.reduce(concatNestedArrays, []);\n\t}\n\n\treturn accumulator.concat(value);\n}\n",
+    "content": "/**\n * Deep flat operation.\n *\n * The depth is unlimited and cannot be set.\n *\n * @example\n * [[1, 2], [[3], 4]].reduce(concatNestedArrays, []) // [1, 2, 3, 4]\n *\n * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat\n * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flatMap\n *\n * @param {any[]} accumulator - The accumulated value previously returned in the last invocation.\n * @param {any} value - The current element being processed in the array.\n */\nexport default function concatNestedArrays(accumulator, value) {\n\tif (Array.isArray(value)) {\n\t\tvalue = value.reduce(concatNestedArrays, []);\n\t}\n\n\treturn accumulator.concat(value);\n}\n",
     "static": true,
     "longname": "/home/fkm/Development/GitHub/fkm/array/lib/reducers/concatNestedArrays.js",
     "access": "public",
@@ -875,7 +875,7 @@
     "importStyle": "concatNestedArrays",
     "description": "Deep flat operation.\n\nThe depth is unlimited and cannot be set.",
     "examples": [
-      "[[1, 2], [[3], 4]].reduce(concatNestedArrays) // [1, 2, 3, 4]"
+      "[[1, 2], [[3], 4]].reduce(concatNestedArrays, []) // [1, 2, 3, 4]"
     ],
     "see": [
       "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat",
@@ -909,7 +909,7 @@
     "__docId__": 62,
     "kind": "file",
     "name": "lib/reducers/index.js",
-    "content": "export { default as concatArrays } from './concatArrays';\nexport { default as concatNestedArrays } from './concatNestedArrays';\nexport { default as mergeObjects } from './mergeObjects';\n",
+    "content": "export { default as concatArrays } from './concatArrays';\nexport { default as concatNestedArrays } from './concatNestedArrays';\nexport { default as mergeObjects } from './mergeObjects';\nexport { default as sumNumbers } from './sumNumbers';\n",
     "static": true,
     "longname": "/home/fkm/Development/GitHub/fkm/array/lib/reducers/index.js",
     "access": "public",
@@ -920,7 +920,7 @@
     "__docId__": 63,
     "kind": "file",
     "name": "lib/reducers/mergeObjects.js",
-    "content": "/**\n * Creates an object with all properties found in the array.\n *\n * @example\n *  [{ a: 1 }, { b: 2 }].reduce(mergeObjects) // { a: 1, b: 2 }\n *\n * @param {object} accumulator - The accumulated value previously returned in the last invocation.\n * @param {any} value - The current element being processed in the array.\n */\nexport default function mergeObjects(accumulator, value) {\n\treturn Object.assign(accumulator, value);\n}\n",
+    "content": "/**\n * Creates an object with all properties found in the array.\n *\n * @example\n *  [{ a: 1 }, { b: 2 }].reduce(mergeObjects, {}) // { a: 1, b: 2 }\n *\n * @param {object} accumulator - The accumulated value previously returned in the last invocation.\n * @param {any} value - The current element being processed in the array.\n */\nexport default function mergeObjects(accumulator, value) {\n\treturn Object.assign(accumulator, value);\n}\n",
     "static": true,
     "longname": "/home/fkm/Development/GitHub/fkm/array/lib/reducers/mergeObjects.js",
     "access": "public",
@@ -942,7 +942,7 @@
     "importStyle": "mergeObjects",
     "description": "Creates an object with all properties found in the array.",
     "examples": [
-      " [{ a: 1 }, { b: 2 }].reduce(mergeObjects) // { a: 1, b: 2 }"
+      " [{ a: 1 }, { b: 2 }].reduce(mergeObjects, {}) // { a: 1, b: 2 }"
     ],
     "lineNumber": 10,
     "params": [
@@ -971,6 +971,58 @@
   {
     "__docId__": 65,
     "kind": "file",
+    "name": "lib/reducers/sumNumbers.js",
+    "content": "/**\n * Sum all values.\n *\n * @example\n * [1, 2, 3].reduce(sumNumbers, 0) // 6\n *\n * @param {number} accumulator - The accumulated value previously returned in the last invocation.\n * @param {number} value - The current element being processed in the array.\n */\nexport default function sumNumbers(accumulator, value) {\n\treturn accumulator + value;\n}\n",
+    "static": true,
+    "longname": "/home/fkm/Development/GitHub/fkm/array/lib/reducers/sumNumbers.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 66,
+    "kind": "function",
+    "name": "sumNumbers",
+    "memberof": "lib/reducers/sumNumbers.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "lib/reducers/sumNumbers.js~sumNumbers",
+    "access": "public",
+    "export": true,
+    "importPath": "@fkm/array",
+    "importStyle": "sumNumbers",
+    "description": "Sum all values.",
+    "examples": [
+      "[1, 2, 3].reduce(sumNumbers, 0) // 6"
+    ],
+    "lineNumber": 10,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "accumulator",
+        "description": "The accumulated value previously returned in the last invocation."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "value",
+        "description": "The current element being processed in the array."
+      }
+    ]
+  },
+  {
+    "__docId__": 67,
+    "kind": "file",
     "name": "lib/sorters/ascendingDates.js",
     "content": "/**\n * Sorts the array according to `.valueOf()`.\n *\n * @example\n * [\n *   new Date(2020, 0, 4),\n *   new Date(2020, 0, 2),\n *   new Date(2020, 0, 1),\n *   new Date(2020, 0, 3),\n * ].sort(ascendingDates)\n * // [\n * //   new Date(2020, 0, 1),\n * //   new Date(2020, 0, 2),\n * //   new Date(2020, 0, 3),\n * //   new Date(2020, 0, 4),\n * // ];\n *\n * @param {Date} a - The first element for comparison.\n * @param {Date} b - The second element for comparison.\n */\nexport default function ascendingDates(a, b) {\n\treturn a.valueOf() - b.valueOf();\n}\n",
     "static": true,
@@ -980,7 +1032,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 66,
+    "__docId__": 68,
     "kind": "function",
     "name": "ascendingDates",
     "memberof": "lib/sorters/ascendingDates.js",
@@ -1021,7 +1073,7 @@
     ]
   },
   {
-    "__docId__": 67,
+    "__docId__": 69,
     "kind": "file",
     "name": "lib/sorters/index.js",
     "content": "export { default as ascendingDates } from './ascendingDates';\n",
@@ -1033,7 +1085,7 @@
   },
   {
     "kind": "index",
-    "content": "# @fkm/array\nGeneric handlers for array functions.\n\n## Usage\n* `npm install --save-dev @fkm/array`\n* `import { isDefined } from '@fkm/array'`\n* `[1, 2, , 4].filter(isDefined)` returns [1, 2, 4]\n\n## Handlers\n### Filters\n* isDefined\n* isNotEmptyString\n* keepUniqueValues\n* keepUniqueDates\n\n### Reducers\n* concatArrays\n* concatNestedArrays\n* mergeObjects\n\n### Sorters\n* ascendingDates\n\n## License\nCopyright 2020 Florian Mäder - Permission granted under the [MIT license](LICENSE).\n",
+    "content": "# @fkm/array\nGeneric handlers for array functions.\n\n## Usage\n* `npm install --save-dev @fkm/array`\n* `import { isDefined } from '@fkm/array'`\n* `[1, 2, , 4].filter(isDefined)` returns [1, 2, 4]\n\n## Handlers\n### Filters\n* isDefined\n* isNotEmptyString\n* keepUniqueValues\n* keepUniqueDates\n\n### Reducers\n* concatArrays\n* concatNestedArrays\n* mergeObjects\n* sumNumbers\n\n### Sorters\n* ascendingDates\n\n## License\nCopyright 2020 Florian Mäder - Permission granted under the [MIT license](LICENSE).\n",
     "longname": "/home/fkm/Development/GitHub/fkm/array/README.md",
     "name": "./README.md",
     "static": true,
@@ -1041,7 +1093,7 @@
   },
   {
     "kind": "packageJSON",
-    "content": "{\n  \"name\": \"@fkm/array\",\n  \"description\": \"Generic handlers for array functions.\",\n  \"version\": \"1.0.0\",\n  \"main\": \"dist/bundle.min.js\",\n  \"author\": \"Florian Mäder <florian@maederbiel.ch>\",\n  \"license\": \"MIT\",\n  \"repository\": \"fkm/array\",\n  \"publishConfig\": {\n    \"access\": \"public\"\n  },\n  \"release\": {\n    \"extends\": \"@fkm/semantic-release-config\"\n  },\n  \"scripts\": {\n    \"start\": \"webpack\",\n    \"test\": \"nyc mocha --require @babel/register\",\n    \"docs\": \"esdoc\",\n    \"lint\": \"eslint .\",\n    \"release\": \"curl https://api.github.com/repos/fkm/array/dispatches -H \\\"Authorization: token ${GITHUB_TOKEN}\\\" -d '{ \\\"event_type\\\": \\\"semantic-release\\\" }'\"\n  },\n  \"devDependencies\": {\n    \"@babel/core\": \"^7.9.6\",\n    \"@babel/preset-env\": \"^7.9.6\",\n    \"@babel/register\": \"^7.9.0\",\n    \"@fkm/eslint-config\": \"fkm/eslint-config\",\n    \"@fkm/semantic-release-config\": \"^1.0.0\",\n    \"babel-loader\": \"^8.1.0\",\n    \"chai\": \"^4.2.0\",\n    \"clean-webpack-plugin\": \"^3.0.0\",\n    \"esdoc\": \"^1.1.0\",\n    \"esdoc-accessor-plugin\": \"^1.0.0\",\n    \"esdoc-brand-plugin\": \"^1.0.1\",\n    \"esdoc-coverage-plugin\": \"^1.1.0\",\n    \"esdoc-ecmascript-proposal-plugin\": \"^1.0.0\",\n    \"esdoc-external-ecmascript-plugin\": \"^1.0.0\",\n    \"esdoc-importpath-plugin\": \"^1.0.2\",\n    \"esdoc-publish-html-plugin\": \"^1.1.2\",\n    \"mocha\": \"^7.1.2\",\n    \"nyc\": \"^15.0.1\",\n    \"terser-webpack-plugin\": \"^3.0.2\",\n    \"webpack\": \"^4.43.0\",\n    \"webpack-cli\": \"^3.3.11\"\n  }\n}\n",
+    "content": "{\n  \"name\": \"@fkm/array\",\n  \"description\": \"Generic handlers for array functions.\",\n  \"version\": \"1.0.0\",\n  \"main\": \"dist/bundle.min.js\",\n  \"author\": \"Florian Mäder <florian@maederbiel.ch>\",\n  \"license\": \"MIT\",\n  \"repository\": \"fkm/array\",\n  \"publishConfig\": {\n    \"access\": \"public\"\n  },\n  \"release\": {\n    \"extends\": \"@fkm/semantic-release-config\"\n  },\n  \"scripts\": {\n    \"docs\": \"esdoc\",\n    \"lint\": \"eslint .\",\n    \"test\": \"nyc mocha --require @babel/register\",\n    \"build\": \"webpack\",\n    \"prepublishOnly\": \"npm run build\",\n    \"release\": \"curl https://api.github.com/repos/fkm/array/dispatches -H \\\"Authorization: token ${GITHUB_TOKEN}\\\" -d '{ \\\"event_type\\\": \\\"semantic-release\\\" }'\"\n  },\n  \"devDependencies\": {\n    \"@babel/core\": \"^7.9.6\",\n    \"@babel/preset-env\": \"^7.9.6\",\n    \"@babel/register\": \"^7.9.0\",\n    \"@fkm/eslint-config\": \"fkm/eslint-config\",\n    \"@fkm/semantic-release-config\": \"^1.0.0\",\n    \"babel-loader\": \"^8.1.0\",\n    \"chai\": \"^4.2.0\",\n    \"clean-webpack-plugin\": \"^3.0.0\",\n    \"esdoc\": \"^1.1.0\",\n    \"esdoc-accessor-plugin\": \"^1.0.0\",\n    \"esdoc-brand-plugin\": \"^1.0.1\",\n    \"esdoc-coverage-plugin\": \"^1.1.0\",\n    \"esdoc-ecmascript-proposal-plugin\": \"^1.0.0\",\n    \"esdoc-external-ecmascript-plugin\": \"^1.0.0\",\n    \"esdoc-importpath-plugin\": \"^1.0.2\",\n    \"esdoc-publish-html-plugin\": \"^1.1.2\",\n    \"mocha\": \"^7.1.2\",\n    \"nyc\": \"^15.0.1\",\n    \"terser-webpack-plugin\": \"^3.0.2\",\n    \"webpack\": \"^4.43.0\",\n    \"webpack-cli\": \"^3.3.11\"\n  }\n}\n",
     "longname": "/home/fkm/Development/GitHub/fkm/array/package.json",
     "name": "package.json",
     "static": true,

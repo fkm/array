@@ -48,6 +48,12 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "@fkm/array~sumnumbers",
+    "function/index.html#static-function-sumNumbers",
+    "<span>sumNumbers</span> <span class=\"search-result-import-path\">@fkm/array</span>",
+    "function"
+  ],
+  [
     "lib/.external-ecmascript.js~array",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
     "lib/.external-ecmascript.js~Array",
@@ -387,6 +393,12 @@ window.esdocSearchIndex = [
     "lib/reducers/mergeobjects.js",
     "file/lib/reducers/mergeObjects.js.html",
     "lib/reducers/mergeObjects.js",
+    "file"
+  ],
+  [
+    "lib/reducers/sumnumbers.js",
+    "file/lib/reducers/sumNumbers.js.html",
+    "lib/reducers/sumNumbers.js",
     "file"
   ],
   [

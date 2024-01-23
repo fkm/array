@@ -1,7 +1,7 @@
 {
   "coverage": "100%",
-  "expectCount": 8,
-  "actualCount": 8,
+  "expectCount": 9,
+  "actualCount": 9,
   "files": {
     "lib/filters/isDefined.js": {
       "expectCount": 1,
@@ -34,6 +34,11 @@
       "undocumentLines": []
     },
     "lib/reducers/mergeObjects.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "lib/reducers/sumNumbers.js": {
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []
