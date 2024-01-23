@@ -7,9 +7,9 @@ const {
 	keepUniqueDates,
 } = require('../lib');
 
-describe('Filters', function () {
-	describe('isDefined', function () {
-		it('should only keep defined entries.', function () {
+describe('Filters', () => {
+	describe('isDefined', () => {
+		it('should only keep defined entries.', () => {
 			let items = [1, 2, undefined, 4];
 			let expected = [1, 2, 4];
 
@@ -18,8 +18,8 @@ describe('Filters', function () {
 		});
 	});
 
-	describe('isNotEmptyString', function () {
-		it('should remove empty strings.', function () {
+	describe('isNotEmptyString', () => {
+		it('should remove empty strings.', () => {
 			let items = ['a', 'b', '', 'd'];
 			let expected = ['a', 'b', 'd'];
 
@@ -28,8 +28,8 @@ describe('Filters', function () {
 		});
 	});
 
-	describe('keepUniqueValues', function () {
-		it('should remove duplicate values.', function () {
+	describe('keepUniqueValues', () => {
+		it('should remove duplicate values.', () => {
 			let items = [1, 2, 2, 4];
 			let expected = [1, 2, 4];
 
@@ -38,8 +38,8 @@ describe('Filters', function () {
 		});
 	});
 
-	describe('keepUniqueDates', function () {
-		it('should remove duplicate dates.', function () {
+	describe('keepUniqueDates', () => {
+		it('should remove duplicate dates.', () => {
 			let items = [
 				new Date(2020, 0, 1),
 				new Date(2020, 0, 2),

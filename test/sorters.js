@@ -4,9 +4,9 @@ const {
 	ascendingDates,
 } = require('../lib');
 
-describe('Sorters', function () {
-	describe('ascendingDates', function () {
-		it('should sort dates starting in the past.', function () {
+describe('Sorters', () => {
+	describe('ascendingDates', () => {
+		it('should sort dates starting in the past.', () => {
 			let items = [
 				new Date(2020, 0, 4),
 				new Date(2020, 0, 2),

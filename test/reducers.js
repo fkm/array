@@ -7,29 +7,29 @@ const {
 	sumNumbers,
 } = require('../lib');
 
-describe('Reducers', function () {
-	describe('concatArrays', function () {
-		it('should flatten the array. (shallow)', function () {
+describe('Reducers', () => {
+	describe('concatArrays', () => {
+		it('should flatten the array. (shallow)', () => {
 			let items = [[1, 2], [[3], 4]];
 			let expected = [1, 2, [3], 4];
 
-			let actual = items.reduce(concatArrays);
+			let actual = items.reduce(concatArrays, []);
 			assert.deepEqual(actual, expected);
 		});
 	});
 
-	describe('concatNestedArrays', function () {
-		it('should flatten the array. (deep)', function () {
+	describe('concatNestedArrays', () => {
+		it('should flatten the array. (deep)', () => {
 			let items = [[1, 2], [[3], 4]];
 			let expected = [1, 2, 3, 4];
 
-			let actual = items.reduce(concatNestedArrays);
+			let actual = items.reduce(concatNestedArrays, []);
 			assert.deepEqual(actual, expected);
 		});
 	});
 
-	describe('mergeObjects', function () {
-		it('should merge all properties onto one object.', function () {
+	describe('mergeObjects', () => {
+		it('should merge all properties onto one object.', () => {
 			let items = [{ a: 1 }, { b: 2 }];
 			let expected = { a: 1, b: 2 };
 
