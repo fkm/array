@@ -4,6 +4,7 @@ const {
 	concatArrays,
 	concatNestedArrays,
 	mergeObjects,
+	sumNumbers,
 } = require('../lib');
 
 describe('Reducers', function () {
@@ -32,7 +33,17 @@ describe('Reducers', function () {
 			let items = [{ a: 1 }, { b: 2 }];
 			let expected = { a: 1, b: 2 };
 
-			let actual = items.reduce(mergeObjects);
+			let actual = items.reduce(mergeObjects, {});
+			assert.deepEqual(actual, expected);
+		});
+	});
+
+	describe('sumNumbers', () => {
+		it('should sum all numbers of the array.', () => {
+			let items = [1, 2, 3, 4, 5, 6];
+			let expected = 21;
+
+			let actual = items.reduce(sumNumbers, 0);
 			assert.deepEqual(actual, expected);
 		});
 	});

@@ -17,6 +17,7 @@ Generic handlers for array functions.
 * concatArrays
 * concatNestedArrays
 * mergeObjects
+* sumNumbers
 
 ### Sorters
 * ascendingDates
