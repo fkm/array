@@ -21,6 +21,7 @@ module.exports = {
 	rules: {},
 
 	ignorePatterns: [
+		'coverage/**/*',
 		'dist/**/*',
 		'docs/**/*',
 	],
