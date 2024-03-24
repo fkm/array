@@ -23,4 +23,4 @@ Generic handlers for array functions.
 * ascendingDates
 
 ## License
-Copyright 2020 Florian Mäder - Permission granted under the [MIT license](LICENSE).
+Copyright 2024 Florian Mäder - Permission granted under the [MIT license](LICENSE).
